@@ -33,6 +33,16 @@ public class EmployeeService {
 	}
 	
 	/**
+	 * 従業員情報を曖昧検索します.
+	 * 
+	 * @return　曖昧検索後の従業員情報一覧
+	 */
+	public List<Employee> showLikeList(String name) {
+		List<Employee> employeeList = employeeRepository.findByLikeName(name);
+		return employeeList;
+	}
+	
+	/**
 	 * 従業員情報を取得します.
 	 * 
 	 * @param id ID
